@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <title>Home 2</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
@@ -36,16 +37,47 @@
         </div>
         <nav class="nav-links-home1" id="navLinks-home1">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html">Shop</a></li>
+            <li class="dropdown-home1">
+              <a href="index.html">Home <i class="fa fa-angle-down"></i></a>
+              <ul class="dropdown-menu-home1">
+                <li><a href="home1.html">Home v1</a></li>
+                <li><a href="home2.html">Home v2</a></li>
+              </ul>
+            </li>
+      
+            <li class="dropdown-home1">
+              <a href="#">Shop <i class="fa fa-angle-down"></i></a>
+              <ul class="dropdown-menu-home1">
+                <li><a href="shop1.html">All Products</a></li>
+                <li><a href="#">New Arrivals</a></li>
+              </ul>
+            </li>
+      
             <li><a href="heaphones.html">Headphones</a></li>
             <li><a href="accessories.html">Accessories</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="contactus.html">Contact</a></li>
           </ul>
         </nav>
-       
+      
+        <div class="icons-home1">
+          <i class="fa fa-search"></i>
+          <span class="account"><i class="fa fa-user"></i> Account</span>
+          <div class="icon-with-badge">
+            <i class="fa fa-heart"></i>
+            <span class="badge">0</span>
+          </div>
+          <div class="icon-with-badge">
+            <i class="fa fa-retweet"></i>
+            <span class="badge">0</span>
+          </div>
+          <div class="icon-with-badge">
+            <i class="fa fa-shopping-cart"></i>
+            <span class="badge">0</span>
+          </div>
+        </div>
       </header>
+      
       <section class="hero-home1">
         <div class="overlay-home1"></div>
         <div class="hero-content-home1">
@@ -284,10 +316,10 @@
     function toggleMenuHome1() {
       document.getElementById("navLinks-home1").classList.toggle("active-home1");
     }
-    const slide = document.querySelectorAll('.testimonial-slide-home1');
-const prevbtn = document.querySelector('.prev-btn-home1');
-const nextbtn = document.querySelector('.next-btn-home1');
-let currentslide = 0;
+    const slides = document.querySelectorAll('.testimonial-slide-home1'); 
+const prevBtn = document.querySelector('.prev-btn-home1');
+const nextBtn = document.querySelector('.next-btn-home1');
+let currentSlide = 0;
 
 function showSlide(index) {
   slides.forEach((slide, i) => {
@@ -307,6 +339,7 @@ nextBtn.addEventListener('click', () => {
   currentSlide = (currentSlide === slides.length - 1) ? 0 : currentSlide + 1;
   showSlide(currentSlide);
 });
+
 
   </script>
 </body>
